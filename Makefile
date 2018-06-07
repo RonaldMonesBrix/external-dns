@@ -16,6 +16,10 @@ trash: .dapper
 trash-keep: .dapper
 	./.dapper -m bind trash -k
 
+dep:
+	curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+	dep ensure -vendor-only
+
 deps: trash
 
 .DEFAULT_GOAL := ci
